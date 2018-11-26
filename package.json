@@ -1,0 +1,29 @@
+{
+  "name": "@starbase/profiles",
+  "version": "0.0.1",
+  "description": "Starbase User Profiles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "profiles",
+    "user",
+    "profile",
+    "starbase",
+    "auth"
+  ],
+  "author": "Mike Fuller",
+  "license": "MIT",
+  "dependencies": {
+    "@starbase/therules": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starbasealpha/profiles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/starbasealpha/profiles/issues"
+  },
+  "homepage": "https://github.com/starbasealpha/profiles#readme"
+}
