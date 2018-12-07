@@ -1,7 +1,7 @@
 'use strict';
 
 const getUser = (req, kit, params) => {
-  return kit.auth.verifyToken({"accessToken":req.token||null}).then(token=>{return token.user;}).catch(err=>{return null;});
+  return kit.auth.verifyToken(req.token||null).then(token=>{return token.user;}).catch(err=>{return null;});
 };
 
 const isSignedIn = async (req, kit, params) => {
