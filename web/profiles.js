@@ -25,7 +25,14 @@ function Profiles(api=null,auth=null) {
     return api.path(username).put(profile);
   }
 
-  async function listProfiles(query) {
+  async function listProfiles(query={}) {
+    if (!query || typeof query !== 'object') {
+      query = {};
+      query.limit = 10;
+    }
+    if (!query.limit || query.limit > 10) {
+      query.limit = 10;
+    }
     api.setToken(await auth.getToken());
     return api.list(query);
   }
