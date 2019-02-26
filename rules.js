@@ -45,7 +45,10 @@ const Rules = [
   {
     "path":"/",
     "rules":{
-      "list":isSignedIn
+      "list":(req, kit, params) => {
+        return isSignedIn(req, kit, params) &&
+          req.data && req.data.limit && typeof req.data.limit === 'number' && req.data.limit <= 10;
+      }
     },
     "methods":profileMethods
   },
