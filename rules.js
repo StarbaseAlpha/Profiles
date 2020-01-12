@@ -19,9 +19,16 @@ const isValidProfile = async (req, kit, params) => {
     return kit.isValidProfile(req,kit,params) && await isProfileUser(req,kit,params);
   } else {
     return typeof req.data === 'object' &&
-    Object.keys(req.data).length === 1 &&
+    Object.keys(req.data).length === 3 &&
+
     typeof req.data.name === 'string' &&
-    req.data.name.length > 0 && req.data.name.length < 50 &&
+    typeof req.data.photo === 'string' &&
+    typeof req.data.about === 'string' &&
+
+    req.data.name.length >= 0 && req.data.name.length <= 50 &&
+    req.data.photo.length >= 0 && req.data.photo.length <= 255 &&
+    req.data.about.length >= 0 && req.data.about.length <= 500 &&
+
     await isProfileUser(req,kit,params);
   }
 };
